@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<GridPane alignment="center" hgap="10" prefHeight="400.0" prefWidth="400.0" vgap="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+    <padding>
+        <Insets bottom="10" left="25" right="25" top="25" />
+    </padding>
+    <Text fx:id="dayLabel" text="День" GridPane.columnIndex="3" GridPane.columnSpan="4" />
+    <VBox spacing="10" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+        <Text text="Ваши данные:" />
+        <Label text="Воды:" />
+        <Label fx:id="waterLabel" text="" />
+        <Label text="Риса:" />
+        <Label fx:id="riceLabel" text="" />
+        <Label text="Крестьян:" />
+        <Label fx:id="peasantsLabel" text="" />
+        <Label text="Домов:" />
+        <Label fx:id="housesLabel" text="" />
+    </VBox>
+    <VBox spacing="10" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="1">
+        <Text text="Данные AI:" />
+        <Label text="Воды:" />
+        <Label fx:id="A_waterLabel" text="" />
+        <Label text="Риса:" />
+        <Label fx:id="A_riceLabel" text="" />
+        <Label text="Крестьян:" />
+        <Label fx:id="A_peasantsLabel" text="" />
+        <Label text="Домов:" />
+        <Label fx:id="A_housesLabel" text="" />
+    </VBox>
+    <HBox alignment="center" spacing="10" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="2" />
+     <Button fx:id="collectWater" minWidth="50.0" onAction="#collectWater" text="Набрать воды" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+     <Button fx:id="buildHome" onAction="#buildHome" text="Построить дом" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+     <Button fx:id="waterPlants" onAction="#waterPlants" text="Полить рис" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+     <Button fx:id="exploreNewTerritory" onAction="#exploreNewTerritory" text="Новые территории" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

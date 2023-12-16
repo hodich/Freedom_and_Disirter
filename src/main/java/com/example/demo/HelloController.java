@@ -101,20 +101,23 @@ public class HelloController {
     // Метод для обновления данных игрока и AI, а также элементов GUI
     private void update() {
 
-        logger.error("Эта хуйня работает!!!!");
-        logger.info("Всем сосать!!");
+        logger.info("Запускается обновление данных");
 
         if (!end) {
             // Проверка может ли игрок захватить новую территорию
+
             Can_Pchar_Claim = P_chars >= Chars_4_Calim_Cell;
 
             // Проверка возможности постройки дома
+
             Can_PBuild_Home = P_chars >= Chars_From_House && P_plants >= 1 && P_water >= 1;
 
             // Проверка может ли AI захватить новую территорию
+
             Can_Achar_Claim = A_chars >= Chars_4_Calim_Cell;
 
             // Проверка возможности постройки дома AI
+
             Can_ABuild_Home = A_chars >= Chars_From_House && A_plants >= 1 && A_water >= 1;
 
             // Обновление меток с данными игрока
@@ -126,12 +129,14 @@ public class HelloController {
             housesLabel.setText("Домов: " + P_houses);
 
             // Обновление меток с данными AI
+
             A_waterLabel.setText("Воды: " + A_water);
             A_riceLabel.setText("Риса: " + A_plants);
             A_peasantsLabel.setText("Крестьян: " + A_chars);
             A_housesLabel.setText("Домов: " + A_houses);
 
             // Обновление доступности кнопок в зависимости от возможности действия игрока
+
             collectWater.setDisable(false); // Кнопка для набора воды всегда доступна
             waterPlants.setDisable(false); // Кнопка для полива риса всегда доступна
             exploreNewTerritory.setDisable(!Can_Pchar_Claim); // Кнопка для исследования новой территории доступна, если есть достаточно крестьян
@@ -142,11 +147,13 @@ public class HelloController {
     // Метод для обработки нажатия на кнопку для набора воды игроком
 
     /**
-     *
      * @param event
      */
     @FXML
     void collectWater(ActionEvent event) {
+
+        logger.info("Запускает сбор воды");
+
         P_water++; // Увеличить количество воды игрока
         update(); // Обновить данные и GUI
         performAITurn();
@@ -154,12 +161,14 @@ public class HelloController {
     }
 
     /**
-     *
-     * @param event
+     * @param event //указывает на то, что метод принимает в качестве параметра объект event
      */
     // Метод для обработки нажатия на кнопку для полива риса игроком
     @FXML
     void waterPlants(ActionEvent event) {
+
+        logger.info("Запускает поливание риса");
+
         if (P_water > 0) {
             P_water--;
             P_plants += Plants_Grows;// Увеличить количество рисa игрока
@@ -170,12 +179,14 @@ public class HelloController {
     }
 
     /**
-     *
-     * @param event
+     * @param event  //указывает на то, что метод принимает в качестве параметра объект event
      */
     // Метод для обработки нажатия на кнопку для исследования новой территории игроком
     @FXML
     void exploreNewTerritory(ActionEvent event) {
+
+        logger.info("Запускает исследование новых территорий");
+
         if (Can_Pchar_Claim) { // Проверить, есть ли достаточно крестьян у игрока
             P_Cell--; // Уменьшить количество оставшихся территорий
             P_Cell_Opened++;
@@ -188,42 +199,46 @@ public class HelloController {
     }
 
     /**
-     *
-     * @param event
+     * @param event //указывает на то, что метод принимает в качестве параметра объект event
      */
     // Метод для обработки нажатия на кнопку для постройки дома игроком
     @FXML
     void buildHome(ActionEvent event) {
+
+        logger.info("Запускает постройку дома");
+
         if (Can_PBuild_Home) { // Проверить, есть ли достаточно ресурсов у игрока
             P_houses++; // Увеличить количество домов игрока на 1
             P_chars += Chars_From_House; // Увеличить количество крестьян игрока
             P_plants--; // Уменьшить количество риса игрока
             P_water--; // Уменьшить количество воды игрока
             update(); // Обновить данные и GUI
-            performAITurn();
-            day++;
+            performAITurn(); // Ход AI
+            day++; // Увеличение количества дней
         }
     }
 
     private void performAITurn() {
+
+        logger.info("Запускает очередность ходов AI");
+
         if (Can_Achar_Claim) {
-           // System.out.println("1");
-            exploreNewTerritoryAI();
+            exploreNewTerritoryAI(); // Изучение новых территорий
         } else if (Can_ABuild_Home) {
-           // System.out.println("2");
             buildHomeAI(); // Строит дом
         } else if (A_water > 0) {
-           // System.out.println("3");
             waterPlantsAI(); // Поливает рис
         } else {
-            // System.out.println("4");
             collectWaterAI(); // Собирает воду
         }
-        update();
+        update(); // Обновление GUI и данных
     }
 
     // Метод для обработки нажатия на кнопку для исследования новой территории AI
     private void exploreNewTerritoryAI() {
+
+        logger.info("Запускает исследование новых территорий AI");
+
         if (Can_Achar_Claim) { // Проверить, есть ли достаточно крестьян у AI
             A_Cell--; // Уменьшить количество оставшихся территорий AI
             A_Cell_Opened++;
@@ -235,8 +250,11 @@ public class HelloController {
 
     // Метод для обработки нажатия на кнопку для полива риса AI
     private void waterPlantsAI() {
-        if (A_water > 0) {
-            A_water--;
+
+        logger.info("Запускает поливание риса AI");
+
+        if (A_water > 0) { // Проверить, есть ои достаточное количество воды у AI
+            A_water--; // Уменьшение количества оставшейся воды у AI
             A_plants += Plants_Grows; // Увеличить количество риса AI
             update(); // Обновить данные и GUI
         }
@@ -244,6 +262,9 @@ public class HelloController {
 
     // Метод для обработки нажатия на кнопку для постройки дома AI
     private void buildHomeAI() {
+
+        logger.info("Запускает постройку дома AI");
+
         if (Can_ABuild_Home) { // Проверить, есть ли достаточно ресурсов у AI
             A_houses++; // Увеличить количество домов AI на 1
             A_chars += Chars_From_House; // Увеличить количество крестьян AI
@@ -254,16 +275,21 @@ public class HelloController {
     }
 
     private void collectWaterAI() {
+
+        logger.info("Запускает сбор воды AI");
+
         A_water++; // Увеличить количество воды AI
         update(); // Обновить данные и GUI
     }
 
     /**
-     *
-     * @param player
-     * @return
+     * @param player // Номер игрока, для которого производится проверка
+     * @return //Возвращает true, если игрок занял более половины всех ячеек на карте; иначе false.
      */
     private boolean checkWinCondition(int player) {
+
+        logger.info("Запускает проверку выйгрыша");
+
         int ownedCells = 0;
         for (int[] row : gameMap) {
             for (int cell : row) {
@@ -278,12 +304,12 @@ public class HelloController {
     // Метод для обработки захвата новой территории игроком или AI
 
     /**
-     *
-     * @param player
+     * @param player // Номер игрока, для которого производится проверка
      */
     private void claimTerritory(int player) {
-        // Здесь нужна ваша логика определения, какая именно территория будет занята
-        // Для примера захватим первую свободную ячейку
+
+        logger.info("Запускает проверку захваченных территорий");
+
         for (int i = 0; i < MAP_SIZE; i++) {
             for (int j = 0; j < MAP_SIZE; j++) {
                 if (gameMap[i][j] == NEUTRAL) {
@@ -293,29 +319,23 @@ public class HelloController {
             }
         }
     }
-
+// Проверка победителя и объявление его
     private void checkAndDeclareWinner() {
+
+        logger.info("Запускает проверку и объявление победителя");
+
         if (checkWinCondition(PLAYER)) {
             // Игрок выигрывает
             // Обработка победы игрока
-            // System.out.println("Игрок победил!");
             dayLabel.setText("Игорок победил");
             end = true;
         } else if (checkWinCondition(AI)) {
             // AI выигрывает
             // Обработка победы AI
-            // System.out.println("AI победил!");
             dayLabel.setText("AI победил");
             end = true;
         }
 
     }
-
-    void initialize() {
-        assert exploreNewTerritory != null : "fx:id=\"exploreNewTerritory\" was not injected: check your FXML file 'Hello.fxml'.";
-        assert collectWater != null;
-        assert waterPlants != null;
-        assert buildHome != null;
-        initGameMap(); // Инициализация игрового поля при создании контроллера
-    }
 }
+

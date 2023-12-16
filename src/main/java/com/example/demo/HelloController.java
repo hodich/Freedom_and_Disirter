@@ -8,8 +8,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class HelloController {
+    private static final Logger logger = LogManager.getLogger();
+
 
     @FXML
     private ResourceBundle resources;
@@ -83,6 +87,7 @@ public class HelloController {
     private boolean Can_ABuild_Home = true;
 
     // Константы для игровой логики
+    private static boolean end = false;
     private static final int Chars_4_Calim_Cell = 5;
     private static final int Plants_Grows = 1;
     private static final int Chars_From_House = 1;
@@ -95,37 +100,43 @@ public class HelloController {
 
     // Метод для обновления данных игрока и AI, а также элементов GUI
     private void update() {
-        // Проверка может ли игрок захватить новую территорию
-        Can_Pchar_Claim = P_chars >= Chars_4_Calim_Cell;
 
-        // Проверка возможности постройки дома
-        Can_PBuild_Home = P_chars >= Chars_From_House && P_plants >= 1 && P_water >= 1;
+        logger.error("Эта хуйня работает!!!!");
+        logger.info("Всем сосать!!");
 
-        // Проверка может ли AI захватить новую территорию
-        Can_Achar_Claim = A_chars >= Chars_4_Calim_Cell;
+        if (!end) {
+            // Проверка может ли игрок захватить новую территорию
+            Can_Pchar_Claim = P_chars >= Chars_4_Calim_Cell;
 
-        // Проверка возможности постройки дома AI
-        Can_ABuild_Home = A_chars >= Chars_From_House && A_plants >= 1 && A_water >= 1;
+            // Проверка возможности постройки дома
+            Can_PBuild_Home = P_chars >= Chars_From_House && P_plants >= 1 && P_water >= 1;
 
-        // Обновление меток с данными игрока
+            // Проверка может ли AI захватить новую территорию
+            Can_Achar_Claim = A_chars >= Chars_4_Calim_Cell;
 
-        dayLabel.setText("День " + day + "-й");
-        waterLabel.setText("Воды: " + P_water);
-        riceLabel.setText("Риса: " + P_plants);
-        peasantsLabel.setText("Крестьян: " + P_chars);
-        housesLabel.setText("Домов: " + P_houses);
+            // Проверка возможности постройки дома AI
+            Can_ABuild_Home = A_chars >= Chars_From_House && A_plants >= 1 && A_water >= 1;
 
-        // Обновление меток с данными AI
-        A_waterLabel.setText("Воды: " + A_water);
-        A_riceLabel.setText("Риса: " + A_plants);
-        A_peasantsLabel.setText("Крестьян: " + A_chars);
-        A_housesLabel.setText("Домов: " + A_houses);
+            // Обновление меток с данными игрока
 
-        // Обновление доступности кнопок в зависимости от возможности действия игрока
-        collectWater.setDisable(false); // Кнопка для набора воды всегда доступна
-        waterPlants.setDisable(false); // Кнопка для полива риса всегда доступна
-        exploreNewTerritory.setDisable(!Can_Pchar_Claim); // Кнопка для исследования новой территории доступна, если есть достаточно крестьян
-        buildHome.setDisable(!Can_PBuild_Home); // Кнопка для постройки дома доступна, если есть достаточно ресурсов
+            dayLabel.setText("День " + day + "-й");
+            waterLabel.setText("Воды: " + P_water);
+            riceLabel.setText("Риса: " + P_plants);
+            peasantsLabel.setText("Крестьян: " + P_chars);
+            housesLabel.setText("Домов: " + P_houses);
+
+            // Обновление меток с данными AI
+            A_waterLabel.setText("Воды: " + A_water);
+            A_riceLabel.setText("Риса: " + A_plants);
+            A_peasantsLabel.setText("Крестьян: " + A_chars);
+            A_housesLabel.setText("Домов: " + A_houses);
+
+            // Обновление доступности кнопок в зависимости от возможности действия игрока
+            collectWater.setDisable(false); // Кнопка для набора воды всегда доступна
+            waterPlants.setDisable(false); // Кнопка для полива риса всегда доступна
+            exploreNewTerritory.setDisable(!Can_Pchar_Claim); // Кнопка для исследования новой территории доступна, если есть достаточно крестьян
+            buildHome.setDisable(!Can_PBuild_Home); // Кнопка для постройки дома доступна, если есть достаточно ресурсов
+        }
     }
 
     // Метод для обработки нажатия на кнопку для набора воды игроком
@@ -196,12 +207,16 @@ public class HelloController {
 
     private void performAITurn() {
         if (Can_Achar_Claim) {
+           // System.out.println("1");
             exploreNewTerritoryAI();
         } else if (Can_ABuild_Home) {
-            buildHomeAI(); // Реализуйте этот метод
-        } else if (A_plants > 0 && A_water > 0) {
-            waterPlantsAI(); // Реализуйте этот метод
+           // System.out.println("2");
+            buildHomeAI(); // Строит дом
+        } else if (A_water > 0) {
+           // System.out.println("3");
+            waterPlantsAI(); // Поливает рис
         } else {
+            // System.out.println("4");
             collectWaterAI(); // Собирает воду
         }
         update();
@@ -283,12 +298,17 @@ public class HelloController {
         if (checkWinCondition(PLAYER)) {
             // Игрок выигрывает
             // Обработка победы игрока
-            System.out.println("Игрок победил!");
+            // System.out.println("Игрок победил!");
+            dayLabel.setText("Игорок победил");
+            end = true;
         } else if (checkWinCondition(AI)) {
             // AI выигрывает
             // Обработка победы AI
-            System.out.println("AI победил!");
+            // System.out.println("AI победил!");
+            dayLabel.setText("AI победил");
+            end = true;
         }
+
     }
 
     void initialize() {

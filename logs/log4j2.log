@@ -1,6 +1,52 @@
-2023-12-16 18:26:19,088 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
-2023-12-16 18:26:19,093 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
-2023-12-16 18:26:19,097 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
-2023-12-16 18:26:19,107 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома AI
-2023-12-16 18:26:19,107 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
-2023-12-16 18:26:19,108 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,250 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает исследование новых территорий
+2023-12-17 22:13:42,253 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает проверку захваченных территорий
+2023-12-17 22:13:42,253 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает проверку и объявление победителя
+2023-12-17 22:13:42,253 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает проверку выйгрыша
+2023-12-17 22:13:42,253 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает проверку выйгрыша
+2023-12-17 22:13:42,253 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,255 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:42,255 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома AI
+2023-12-17 22:13:42,255 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,255 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
+2023-12-17 22:13:42,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:42,711 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды AI
+2023-12-17 22:13:42,711 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:42,711 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает поливание риса AI
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,450 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,709 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома
+2023-12-17 22:13:43,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:43,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды AI
+2023-12-17 22:13:43,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:43,710 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,071 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
+2023-12-17 22:13:44,071 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,072 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:44,072 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома AI
+2023-12-17 22:13:44,072 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,072 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,367 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает поливание риса
+2023-12-17 22:13:44,367 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,368 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:44,368 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды AI
+2023-12-17 22:13:44,368 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,368 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,587 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
+2023-12-17 22:13:44,587 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,587 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:44,587 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает поливание риса AI
+2023-12-17 22:13:44,587 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,588 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,913 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома
+2023-12-17 22:13:44,913 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,914 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-17 22:13:44,914 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды AI
+2023-12-17 22:13:44,914 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-17 22:13:44,914 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных

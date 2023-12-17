@@ -3,6 +3,7 @@ package com.example.demo;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -179,7 +180,7 @@ public class HelloController {
     }
 
     /**
-     * @param event  //указывает на то, что метод принимает в качестве параметра объект event
+     * @param event //указывает на то, что метод принимает в качестве параметра объект event
      */
     // Метод для обработки нажатия на кнопку для исследования новой территории игроком
     @FXML
@@ -319,7 +320,8 @@ public class HelloController {
             }
         }
     }
-// Проверка победителя и объявление его
+
+    // Проверка победителя и объявление его
     private void checkAndDeclareWinner() {
 
         logger.info("Запускает проверку и объявление победителя");

@@ -1,0 +1,6 @@
+2023-12-16 18:26:19,088 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает сбор воды
+2023-12-16 18:26:19,093 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-16 18:26:19,097 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает очередность ходов AI
+2023-12-16 18:26:19,107 INFO c.e.d.HelloController [JavaFX Application Thread] Запускает постройку дома AI
+2023-12-16 18:26:19,107 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
+2023-12-16 18:26:19,108 INFO c.e.d.HelloController [JavaFX Application Thread] Запускается обновление данных
